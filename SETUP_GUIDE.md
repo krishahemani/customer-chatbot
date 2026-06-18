@@ -98,7 +98,7 @@ Model used in code: `claude-3-haiku-20240307` (fastest + cheapest Claude model)
 
 1. Go to → **https://huggingface.co/settings/tokens**
 2. Sign up → click **"New Token"** → select **"Read"** role
-3. In `.env`: `HUGGINGFACE_API_KEY=hf_your-token-here`
+3.`.env`: `HUGGINGFACE_API_KEY=hf_your_actual_token_here`
 4. In `app.py`: uncomment the Hugging Face block
 5. No extra pip install needed
 
