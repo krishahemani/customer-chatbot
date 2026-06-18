@@ -1,0 +1,32 @@
+# ==============================================
+# .gitignore — Files that will NOT be uploaded
+# to GitHub (keeps your secrets safe!)
+# ==============================================
+
+# SECRET: Never commit your real .env file
+.env
+*.env
+
+# Python virtual environment folder
+venv/
+env/
+.venv/
+
+# Python cache files (auto-generated, not needed)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# VS Code settings (optional — remove this line if you want to share settings)
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Logs
+*.log

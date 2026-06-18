@@ -1,0 +1,27 @@
+# requirements.txt — Install with: pip install -r requirements.txt
+
+# Core web framework
+flask==3.0.3
+
+# Allow frontend to talk to backend (Cross-Origin Resource Sharing)
+flask-cors==4.0.1
+
+# Load .env variables into Python
+python-dotenv==1.0.1
+
+# --- AI Provider SDKs (install only the one you use) ---
+
+# Option 1: Anthropic (Claude) — RECOMMENDED free option
+anthropic==0.28.0
+
+# Option 2: OpenAI — Uncomment if using GPT-3.5 / GPT-4
+# openai==1.35.0
+
+# Option 3: Cohere — Uncomment if using Cohere
+# cohere==5.5.8
+
+# Option 4: Hugging Face — Uses requests (already included by default in Python)
+# No extra install needed for Hugging Face REST API
+
+# HTTP requests (needed for Hugging Face REST API or any manual API calls)
+requests==2.32.3

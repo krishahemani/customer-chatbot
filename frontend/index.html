@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aria — Customer Support</title>
+  <link rel="stylesheet" href="style.css" />
+  <!--
+    We use Google Fonts for a distinctive look.
+    "DM Sans" = clean modern body text
+    "Fraunces" = elegant display font for the header
+    No installation needed — loaded from CDN.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- =============================================
+       SIDEBAR — Left panel with brand + quick links
+       ============================================= -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">✦</div>
+      <span class="brand-name">Aria</span>
+    </div>
+
+    <nav class="quick-nav">
+      <p class="nav-label">Common Topics</p>
+
+      <button class="nav-item" onclick="sendQuick('How do I track my order?')">
+        <span class="nav-icon">📦</span>
+        Track Order
+      </button>
+      <button class="nav-item" onclick="sendQuick('I need to request a refund for my purchase.')">
+        <span class="nav-icon">💳</span>
+        Refund Request
+      </button>
+      <button class="nav-item" onclick="sendQuick('My account is locked and I cannot log in.')">
+        <span class="nav-icon">🔐</span>
+        Account Access
+      </button>
+      <button class="nav-item" onclick="sendQuick('How long does shipping take?')">
+        <span class="nav-icon">🚚</span>
+        Shipping Info
+      </button>
+      <button class="nav-item" onclick="sendQuick('I received a damaged or wrong product.')">
+        <span class="nav-icon">⚠️</span>
+        Wrong / Damaged Item
+      </button>
+      <button class="nav-item" onclick="sendQuick('How do I cancel my subscription?')">
+        <span class="nav-icon">🔄</span>
+        Cancel Subscription
+      </button>
+      <button class="nav-item" onclick="sendQuick('I have a billing question about my invoice.')">
+        <span class="nav-icon">🧾</span>
+        Billing & Invoice
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="status-pill">
+        <span class="status-dot"></span> AI Online
+      </div>
+      <p class="sidebar-note">Human agents available<br />Mon–Fri · 9am–6pm EST</p>
+    </div>
+  </aside>
+
+  <!-- =============================================
+       MAIN CHAT AREA
+       ============================================= -->
+  <main class="chat-area">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="agent-avatar">A</div>
+        <div>
+          <p class="agent-name">Aria</p>
+          <p class="agent-sub">AI Support Assistant · Powered by Claude</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="action-btn" onclick="clearChat()" title="Clear chat">
+          &#8635; New Chat
+        </button>
+      </div>
+    </header>
+
+    <!-- Messages window -->
+    <div class="messages" id="messages">
+      <!-- Messages are injected here by script.js -->
+    </div>
+
+    <!-- Satisfaction rating bar (hidden until after first bot reply) -->
+    <div class="rating-bar" id="rating-bar" style="display:none;">
+      <span class="rating-label">Was this helpful?</span>
+      <div class="stars" id="stars">
+        <span class="star" data-val="1" onclick="rateStar(1)">★</span>
+        <span class="star" data-val="2" onclick="rateStar(2)">★</span>
+        <span class="star" data-val="3" onclick="rateStar(3)">★</span>
+        <span class="star" data-val="4" onclick="rateStar(4)">★</span>
+        <span class="star" data-val="5" onclick="rateStar(5)">★</span>
+      </div>
+      <span class="rating-thanks" id="rating-thanks"></span>
+    </div>
+
+    <!-- Input area -->
+    <footer class="input-area">
+      <div class="input-wrapper">
+        <textarea
+          id="user-input"
+          placeholder="Ask me anything about your order, account, or product…"
+          rows="1"
+          aria-label="Type your message"
+        ></textarea>
+        <button id="send-btn" onclick="handleSend()" aria-label="Send message">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+      <p class="input-hint">
+        Press <kbd>Enter</kbd> to send · <kbd>Shift+Enter</kbd> for new line
+      </p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
